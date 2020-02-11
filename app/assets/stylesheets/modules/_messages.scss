@@ -104,13 +104,13 @@
           display: flex;
           padding: 0 40px;
         }
-        &__Edit-btn {
+        &__Edit {
           font-size: 16px;
           color: #38aef0;
           border:1px solid #38aef0;
           margin: 28px 0;
           margin-right: 40px;
-          a {
+          .Edit-btn {
             text-decoration: none;
             color: #38aef0;
             display: block;
