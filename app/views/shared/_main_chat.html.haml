@@ -1,0 +1,43 @@
+.chat-main
+  .chat-main__header
+    .chat-main__header__info
+      %h1.chat-main__header__group-name
+        test
+      %ul.chat-main__header__member
+        Member：
+        %li.chat-main__header__member__list
+          masa
+    .chat-main__header__Edit-btn
+      %a{ href: "#"}
+        Edit
+        
+  .chat-main__message-list
+    .chat-main__message-list__contents1
+      %p.chat-main__message-list__name1
+        masa
+      %p.chat-main__message-list__date1
+        2020/02/11(Tue) 07:30:00
+    .chat-main__message-list__message1
+      おはよう！
+    .chat-main__message-list__contents2
+      %p.chat-main__message-list__name2
+        masa
+      %p.chat-main__message-list__date2
+        2020/02/11(Tue) 12:00:00
+    .chat-main__message-list__message2
+      こんにちは！
+    .chat-main__message-list__contents3
+      %p.chat-main__message-list__name3
+        masa
+      %p.chat-main__message-list__date3
+        2020/02/11(Tue) 19:00:00
+    .chat-main__message-list__message3
+      こんばんは！
+
+  .message-form
+    .input-box
+      %input{placeholder: "type a message", class: "input-box__message", type: "text"}
+      %label{class: "input-box__image"}
+        = icon('far', 'image')
+        %input{type: "file", class: "input-box__image__file"}
+    %input{href: "#", class: "Send-btn", type: "submit", value: "Send"}
