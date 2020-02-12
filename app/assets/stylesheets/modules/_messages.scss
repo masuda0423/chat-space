@@ -35,47 +35,20 @@
       background-color: #2f3e51;
       height: calc(100vh - 100px);
       padding: 20px 20px 0;
-        &__contents1 {
+        &__contents {
+          text-decoration: none;
           margin-bottom: 40px;
-            &__name1 {
+            a {
+              text-decoration: none;
+            }
+            &__name {
               padding-bottom: 5px;
               font-size: 16px;
+              color: #ffffff;
             }
-            &__latest-message1 {
+            &__latest-message {
               font-size: 11px;
-            }
-        }
-        &__contents2 {
-          padding-top: 20px;
-          margin-bottom: 40px;
-            &__name2 {
-              padding-bottom: 5px;
-              font-size: 16px;
-            }
-            &__latest-message2 {
-              font-size: 11px;
-            }
-        }
-        &__contents3 {
-          padding-top: 20px;
-          margin-bottom: 40px;
-            &__name3 {
-              padding-bottom: 5px;
-              font-size: 16px;
-            }
-            &__latest-message3 {
-              font-size: 11px;
-            }
-        }
-        &__contents4 {
-          padding-top: 20px;
-          margin-bottom: 40px;
-            &__name4 {
-              padding-bottom: 5px;
-              font-size: 16px;
-            }
-            &__latest-message4 {
-              font-size: 11px;
+              color: #ffffff;
             }
         }
     }
@@ -98,12 +71,18 @@
           margin-bottom: 15px;
           padding: 0 40px;
         }
-        &__member {
-          font-size: 9px;
+        ul {
+          font-size: 12px;
           color: #999999;
           display: flex;
           padding: 0 40px;
+          li {
+            font-size: 12px;
+            color: #999999;
+            display: flex;
+          }
         }
+          
         &__Edit {
           font-size: 16px;
           color: #38aef0;
