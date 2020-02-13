@@ -2,42 +2,24 @@
   .chat-main__header
     .chat-main__header__info
       .chat-main__header__group-name
-        test
+        = @group.name
       %ul.chat-main__header__member
         Member：
         %li.chat-main__header__member__list
-          masa
+          - @group.users.each do |user|
+            = user.name
     .chat-main__header__Edit
-      = link_to "#", class: "Edit-btn" do
+      = link_to edit_group_path(@group.id), class: "Edit-btn" do
         Edit
         
-  .chat-main__message-list
-    .chat-main__message-list__contents1
-      %p.chat-main__message-list__name1
-        masa
-      %p.chat-main__message-list__date1
-        2020/02/11(Tue) 07:30:00
-    .chat-main__message-list__message1
-      おはよう！
-    .chat-main__message-list__contents2
-      %p.chat-main__message-list__name2
-        masa
-      %p.chat-main__message-list__date2
-        2020/02/11(Tue) 12:00:00
-    .chat-main__message-list__message2
-      こんにちは！
-    .chat-main__message-list__contents3
-      %p.chat-main__message-list__name3
-        masa
-      %p.chat-main__message-list__date3
-        2020/02/11(Tue) 19:00:00
-    .chat-main__message-list__message3
-      こんばんは！
+  .messages
+    = render @messages
 
-  .message-form
-    .input-box
-      %input{placeholder: "type a message", class: "input-box__message", type: "text"}
-      %label{class: "input-box__image"}
-        = icon('far', 'image')
-        %input{type: "file", class: "input-box__image__file"}
-    %input{href: "#", class: "Send-btn", type: "submit", value: "Send"}
+  .form
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+      .form__mask
+        = f.label :image, class: 'form__mask__image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'
